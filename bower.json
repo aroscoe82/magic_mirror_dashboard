@@ -1,0 +1,19 @@
+{
+  "name": "magic_mirror",
+  "description": "magic mirror sample webpage",
+  "main": "index.js",
+  "authors": [
+    "Amanda Roscoe"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
