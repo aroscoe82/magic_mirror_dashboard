@@ -15,5 +15,21 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap-sass": "^3.3.7",
+    "moment": "^2.15.0",
+    "angular-moment": "^0.10.3",
+    "angular-resource": "^1.5.8",
+    "weather-icons": "^2.0.10"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0"
+  }
 }

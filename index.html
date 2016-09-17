@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard - Magic Mirror</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-moment/angular-moment.js"></script>
+
+  <script src="apps/clock/clock.js"></script>
+
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Lato';
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+    }
+    .weather-icon i { 
+      vertical-align: middle; 
+      margin: .25em 0;
+      font-size: 3em;
+    }
+
+    .weather-forcast {
+      padding-left: 0;
+      list-style: none;
+    }
+    .weather-forcast .weather-card{
+      box-sizing: border-box;
+
+      width: 16.666666667%;
+      display: inline-block;
+      text-align: center;
+    }
+    
+    .weather-card + .weather-card{
+      border-left: 1px solid #fff;
+    }
+
+    .day{
+      font-size: 2em;
+      margin: .5em 0;
+    }
+    .temp{
+      font-size: 2.5em;
+      line-height: 1em;
+      vertical-align: text-top;
+    }
+    .degree{
+      font-size: 1.5em;
+
+    }
+
+    .pull-left {
+      float: left;
+    }
+    .clearfix { clear: both; }
+  </style>
+</head>
+<body>
+  <div ng-app="clock">
+    <div ng-controller="TimeCtrl">
+      <p>{{ clock }}</p>
+    </div>
+  </div>
+</body>
+</html>
