@@ -8,8 +8,11 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/moment/moment.js"></script>
   <script src="bower_components/angular-moment/angular-moment.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="bower_components/weather-icons/css/weather-icons.css">
 
   <script src="apps/clock/clock.js"></script>
+  <script src="apps/weather/weather.js"></script>
 
   <style>
     @import 'https://fonts.googleapis.com/css?family=Lato';
@@ -62,9 +65,36 @@
   </style>
 </head>
 <body>
-  <div ng-app="clock">
+
+  <!-- <div ng-app="clock">
     <div ng-controller="TimeCtrl">
-      <p>{{ clock }}</p>
+    <p>{{ clock }}</p>
+    </div>
+  </div> -->
+
+  <div ng-app="weather">
+    <div ng-controller="WeatherCtrl">
+      <h2>{{ weatherInfo.city.name }}</h2>
+      <div class="weather-today">
+        <div class="pull-left">
+          <div class="weather-icon">
+            <i class="wi {{ weatherInfo.list[0].weather[0].id | weatherIcons }}"></i>
+          </div>
+          {{ weatherInfo.list[0].weather[0].description }}
+        </div>
+        <div class="pull-left">
+          <p>{{ weatherInfo.list[0].temp.day | number:0 }}&#176;</p>
+          <p>{{ weatherInfo.list[0].dt * 1000  | amDateFormat :  "dddd Do" }}</p>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <ul class="weather-forcast">
+        <li ng-repeat="day in weatherInfo.list" ng-if="!$first" class="weather-card">
+          <p class="day">{{ day.dt* 1000 | date :  "EEE" }}</p>
+          <p class="weather-icon"><i class="wi {{ day.weather[0].id | weatherIcons }}"></i></p>
+          <p><span class="temp">{{ day.temp.day | number:0 }}</span><span class="degree">&#176;</span></p>
+        </li>
+      </ul>
     </div>
   </div>
 </body>
