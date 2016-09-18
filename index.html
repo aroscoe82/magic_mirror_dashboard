@@ -10,10 +10,12 @@
   <script src="bower_components/angular-moment/angular-moment.js"></script>
   
   <link rel="stylesheet" type="text/css" href="bower_components/weather-icons/css/weather-icons.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css">
 
   <script src="apps/dashboard.js"></script>
   <script src="apps/clock/clock.js"></script>
   <script src="apps/weather/weather.js"></script>
+  <script src="apps/todo/todo.js"></script>
 
   <style>
     @import 'https://fonts.googleapis.com/css?family=Lato';
@@ -63,12 +65,33 @@
       float: left;
     }
     .clearfix { clear: both; }
+
+    .todoList {
+      list-style: none;
+      padding-left: 0;
+    }
+    .todoList .todoItem:before {
+      display: inline-block;
+      padding-right: .5em;
+      font-size: .75em;
+      vertical-align: middle;
+      font-family: fontawesome;
+      /*content: "\f10c"; /* circle */
+      content: "\f096";
+    }
   </style>
 </head>
 <body>
   <div ng-app="dashboardApp">
     <div ng-controller="TimeCtrl">
       <p>{{ clock }}</p>
+    </div>
+
+    <div ng-controller="ToDoCtrl">
+      <h2>ToDo</h2>
+      <ul class="todoList">
+        <li ng-repeat="item in listInfo | orderBy: 'created_at':-1 track by $index" class="todoItem">{{ item.title }}</li>
+      </ul>
     </div>
 
     <div ng-controller="WeatherCtrl">

@@ -1,5 +1,6 @@
 angular
   .module('dashboardApp', [
     'clock',
-    'weather'
+    'weather',
+    'todo',
   ]);
