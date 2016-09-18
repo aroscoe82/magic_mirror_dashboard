@@ -232,7 +232,6 @@ module
       appid:_appid
     }).then(function(_data){
       //on success
-      console.log(_data.data);
       $scope.weatherInfo = _data.data;
     }).catch(function (_data) {
       //on error
